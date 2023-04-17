@@ -1,9 +1,20 @@
-<p>
+<!-- <p>
   server started, server Id is {{ serverId }} and Server status is
   {{ serverStatus }}
 </p>
-<p>The current server status is {{ getServerStatus() }}</p>
+<p>The current server status is {{ getServerStatus() }}</p> -->
 
-<button class="btn btn-info" [disabled]="!(serverStatus == 'Online')">
-  {{ serverStatus }}
-</button>
+<div class="container m-5">
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-info" [disabled]="!(serverStatus == 'Online')">
+        {{ serverStatus }} - Server-Id: {{ serverId }}
+      </button>
+    </div>
+    <div class="col text-center">
+      <button class="btn btn-{{ status }}" (click)="powerButton()">
+        {{ serverBtn }} : Server
+      </button>
+    </div>
+  </div>
+</div>
