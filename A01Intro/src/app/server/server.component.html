@@ -2,4 +2,8 @@
   server started, server Id is {{ serverId }} and Server status is
   {{ serverStatus }}
 </p>
-<p>The current server status is {{getServerStatus()}}</p>
+<p>The current server status is {{ getServerStatus() }}</p>
+
+<button class="btn btn-info" [disabled]="!(serverStatus == 'Online')">
+  {{ serverStatus }}
+</button>
