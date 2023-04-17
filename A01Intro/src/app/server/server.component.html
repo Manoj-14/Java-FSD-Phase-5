@@ -16,10 +16,21 @@
         (input)="onUpdateServerName($event)"
       />
     </div>
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="serverdesc"
+        id="serverdesc"
+        placeholder="Server Discription"
+        [(ngModel)]="serverDiscription"
+      />
+    </div>
     <div class="col text-center">
       <button class="btn btn-info" [disabled]="!(serverStatus == 'Online')">
         {{ serverStatus }} - {{ serverName }}: {{ serverId }}
       </button>
+      <small class="form-text text-muted">{{ serverDiscription }}</small>
     </div>
     <div class="col text-center">
       <button class="btn btn-{{ status }}" (click)="powerButton()">

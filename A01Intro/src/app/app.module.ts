@@ -6,6 +6,7 @@ import { ProductsComponent } from './products/products.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { ServerComponent } from './server/server.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ServerComponent } from './server/server.component';
     SuccessAlertComponent,
     ServerComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule], // Import FormModeule for two way binding
   providers: [],
   bootstrap: [AppComponent],
 })

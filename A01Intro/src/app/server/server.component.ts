@@ -11,6 +11,7 @@ export class ServerComponent {
   serverBtn: string = 'Off';
   status: string = 'danger';
   serverName: string = 'Server name';
+  serverDiscription: string = 'Initial Description';
 
   getServerStatus(): string {
     return this.serverStatus;
