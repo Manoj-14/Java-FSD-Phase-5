@@ -6,9 +6,19 @@
 
 <div class="container m-5">
   <div class="row">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        name="servername"
+        id="servername"
+        placeholder="Server name"
+        (input)="onUpdateServerName($event)"
+      />
+    </div>
     <div class="col text-center">
       <button class="btn btn-info" [disabled]="!(serverStatus == 'Online')">
-        {{ serverStatus }} - Server-Id: {{ serverId }}
+        {{ serverStatus }} - {{ serverName }}: {{ serverId }}
       </button>
     </div>
     <div class="col text-center">

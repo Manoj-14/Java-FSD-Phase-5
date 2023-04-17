@@ -10,6 +10,7 @@ export class ServerComponent {
   serverStatus: string = 'Online';
   serverBtn: string = 'Off';
   status: string = 'danger';
+  serverName: string = 'Server name';
 
   getServerStatus(): string {
     return this.serverStatus;
@@ -25,5 +26,10 @@ export class ServerComponent {
       this.serverBtn = 'Off';
       this.status = 'danger';
     }
+  }
+
+  onUpdateServerName(event: any) {
+    const value = event.target.value;
+    this.serverName = value;
   }
 }
