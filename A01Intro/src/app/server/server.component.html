@@ -32,6 +32,17 @@
       </button>
       <small class="form-text text-muted">{{ serverDiscription }}</small>
     </div>
+    <div
+      class="col text-center"
+      *ngIf="serverStatus == 'Online'; else serverOffline"
+    >
+      <button class="btn btn-warning">CPU 50% Network 2 Mb/s</button>
+    </div>
+    <ng-template #serverOffline>
+      <div class="col text-center">
+        <button class="btn btn-warning" disabled>Server if Offline</button>
+      </div>
+    </ng-template>
     <div class="col text-center">
       <button class="btn btn-{{ status }}" (click)="powerButton()">
         {{ serverBtn }} : Server
