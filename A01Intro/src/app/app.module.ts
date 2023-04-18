@@ -8,6 +8,7 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { ServerComponent } from './server/server.component';
 import { FormsModule } from '@angular/forms';
 import { NamesComponent } from './names/names.component';
+import { SecretComponent } from './secret/secret.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NamesComponent } from './names/names.component';
     SuccessAlertComponent,
     ServerComponent,
     NamesComponent,
+    SecretComponent,
   ],
   imports: [BrowserModule, FormsModule], // Import FormModeule for two way binding
   providers: [],
