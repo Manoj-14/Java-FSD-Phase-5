@@ -48,7 +48,11 @@
       </div>
     </ng-template>
     <div class="col text-center">
-      <button class="btn btn-{{ status }}" (click)="powerButton()">
+      <button
+        class="btn text-light"
+        [ngClass]="getServerClass()"
+        (click)="powerButton()"
+      >
         {{ serverBtn }} : Server
       </button>
     </div>

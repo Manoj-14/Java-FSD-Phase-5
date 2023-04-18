@@ -10,7 +10,6 @@ export class ServerComponent {
   serverId: number = 1;
   serverStatus: string = 'Online';
   serverBtn: string = 'Off';
-  status: string = 'danger';
   serverName: string = 'Server name';
   serverDiscription: string = 'Initial Description';
 
@@ -22,11 +21,9 @@ export class ServerComponent {
     if (this.serverStatus == 'Online' && this.serverBtn == 'Off') {
       this.serverStatus = 'Offline';
       this.serverBtn = 'On';
-      this.status = 'success';
     } else {
       this.serverStatus = 'Online';
       this.serverBtn = 'Off';
-      this.status = 'danger';
     }
   }
 
@@ -37,5 +34,8 @@ export class ServerComponent {
 
   getServerColor() {
     return this.serverStatus == 'Online' ? 'green' : 'red';
+  }
+  getServerClass() {
+    return this.serverStatus == 'Online' ? 'bg-danger' : 'bg-success';
   }
 }
