@@ -1,1 +1,9 @@
-<p>products works!</p>
+<h2 class="m-5 text-center">Products</h2>
+<app-add-product (productAdded)="onAddProduct($event)"></app-add-product>
+
+<div class="d-flex flex-wrap justify-content-center">
+  <app-product
+    *ngFor="let myproduct of products"
+    [product]="myproduct"
+  ></app-product>
+</div>

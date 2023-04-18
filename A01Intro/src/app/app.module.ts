@@ -9,6 +9,8 @@ import { ServerComponent } from './server/server.component';
 import { FormsModule } from '@angular/forms';
 import { NamesComponent } from './names/names.component';
 import { SecretComponent } from './secret/secret.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { SecretComponent } from './secret/secret.component';
     ServerComponent,
     NamesComponent,
     SecretComponent,
+    AddProductComponent,
+    ProductComponent,
   ],
   imports: [BrowserModule, FormsModule], // Import FormModeule for two way binding
   providers: [],
