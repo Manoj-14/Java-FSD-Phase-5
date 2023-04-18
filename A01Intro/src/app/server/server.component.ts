@@ -1,3 +1,4 @@
+import { getNsPrefix } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -32,5 +33,9 @@ export class ServerComponent {
   onUpdateServerName(event: any) {
     const value = event.target.value;
     this.serverName = value;
+  }
+
+  getServerColor() {
+    return this.serverStatus == 'Online' ? 'green' : 'red';
   }
 }

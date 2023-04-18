@@ -27,7 +27,11 @@
       />
     </div>
     <div class="col text-center">
-      <button class="btn btn-info" [disabled]="!(serverStatus == 'Online')">
+      <button
+        class="btn btn-info"
+        [ngStyle]="{ backgroundColor: getServerColor() }"
+        [disabled]="!(serverStatus == 'Online')"
+      >
         {{ serverStatus }} - {{ serverName }}: {{ serverId }}
       </button>
       <small class="form-text text-muted">{{ serverDiscription }}</small>
