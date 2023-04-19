@@ -12,6 +12,7 @@ import { SecretComponent } from './secret/secret.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
 import { ProductComponent } from './products/product/product.component';
 import { LifecycleDemoComponent } from './lifecycle-demo/lifecycle-demo.component';
+import { BasicHighlightDirective } from './CustomDirectives/BasicHighlightDirective';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LifecycleDemoComponent } from './lifecycle-demo/lifecycle-demo.componen
     AddProductComponent,
     ProductComponent,
     LifecycleDemoComponent,
+    BasicHighlightDirective,
   ],
   imports: [BrowserModule, FormsModule], // Import FormModeule for two way binding
   providers: [],
