@@ -3,6 +3,7 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
   OnInit,
   Renderer2,
 } from '@angular/core';
@@ -13,6 +14,12 @@ import {
 export class BetterHighlighterDirective implements OnInit {
   @HostBinding('style.backgroundColor')
   backgroundColor: string = '';
+
+  @Input()
+  defaultColor: string = '';
+
+  @Input()
+  highlightColor: string = '';
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
   ngOnInit(): void {
@@ -30,7 +37,7 @@ export class BetterHighlighterDirective implements OnInit {
     //   'background-color',
     //   'lightblue'
     // );
-    this.backgroundColor = 'orange';
+    this.backgroundColor = this.highlightColor;
   }
 
   @HostListener('mouseleave')
@@ -40,6 +47,6 @@ export class BetterHighlighterDirective implements OnInit {
     //   'background-color',
     //   'transparent'
     // );
-    this.backgroundColor = 'transparent';
+    this.backgroundColor = this.defaultColor;
   }
 }
