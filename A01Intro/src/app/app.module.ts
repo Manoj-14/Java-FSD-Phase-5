@@ -13,6 +13,7 @@ import { AddProductComponent } from './products/add-product/add-product.componen
 import { ProductComponent } from './products/product/product.component';
 import { LifecycleDemoComponent } from './lifecycle-demo/lifecycle-demo.component';
 import { BasicHighlightDirective } from './CustomDirectives/BasicHighlightDirective';
+import { BetterHighlighterDirective } from './CustomDirectives/better-highlighter.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BasicHighlightDirective } from './CustomDirectives/BasicHighlightDirect
     ProductComponent,
     LifecycleDemoComponent,
     BasicHighlightDirective,
+    BetterHighlighterDirective,
   ],
   imports: [BrowserModule, FormsModule], // Import FormModeule for two way binding
   providers: [],
