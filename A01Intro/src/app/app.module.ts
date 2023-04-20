@@ -30,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'Product', component: ProductsComponent },
   { path: 'Names', component: NamesComponent },
   { path: 'Account', component: AccountsComponent },
+  { path: 'Observable', component: ObservableDemoComponent },
 ];
 
 @NgModule({
