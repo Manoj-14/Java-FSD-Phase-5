@@ -1,0 +1,9 @@
+<h1 class="text-center">Accounts</h1>
+<app-new-account></app-new-account>
+<div class="d-flex flex-wrap justify-content-center">
+  <app-account
+    *ngFor="let myaccount of accounts; let i = index"
+    [account]="myaccount"
+    [id]="i"
+  ></app-account>
+</div>

@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center m-5">
+  <div class="form-inline">
+    <input
+      type="text"
+      name="name"
+      class="form-control m-2"
+      placeholder="Account Name"
+      #accountName
+    />
+    <select class="form-control m-2" name="status" #status>
+      <option value="Active">Active</option>
+      <option value="Inactive">Inactive</option>
+      <option value="Hidden">Hidden</option>
+    </select>
+    <input
+      type="button"
+      value="Add Account"
+      class="form-control btn btn-primary m-2"
+      (click)="onCreateAccount(accountName.value, status.value)"
+    />
+  </div>
+</div>

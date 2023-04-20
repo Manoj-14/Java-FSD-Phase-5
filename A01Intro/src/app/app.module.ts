@@ -14,6 +14,9 @@ import { ProductComponent } from './products/product/product.component';
 import { LifecycleDemoComponent } from './lifecycle-demo/lifecycle-demo.component';
 import { BasicHighlightDirective } from './CustomDirectives/BasicHighlightDirective';
 import { BetterHighlighterDirective } from './CustomDirectives/better-highlighter.directive';
+import { AccountsComponent } from './accounts/accounts.component';
+import { NewAccountComponent } from './accounts/new-account/new-account.component';
+import { AccountComponent } from './accounts/account/account.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { BetterHighlighterDirective } from './CustomDirectives/better-highlighte
     LifecycleDemoComponent,
     BasicHighlightDirective,
     BetterHighlighterDirective,
+    AccountsComponent,
+    NewAccountComponent,
+    AccountComponent,
   ],
   imports: [BrowserModule, FormsModule], // Import FormModeule for two way binding
   providers: [],

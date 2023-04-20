@@ -1,0 +1,27 @@
+<div class="card m-2">
+  <div class="card-body">
+    <h6 class="card-subtitle text-muted">{{ account.name }}</h6>
+    <p class="card-text">Account Status {{ account.status }}</p>
+    <button
+      class="btn btn-outline-primary btn-sm m-2"
+      (click)="changeStatus('Active')"
+    >
+      Active
+    </button>
+    <button
+      class="btn btn-outline-secondary btn-sm m-2"
+      (click)="changeStatus('Inactive')"
+    >
+      Inactive
+    </button>
+    <button
+      class="btn btn-outline-warning btn-sm m-2"
+      (click)="changeStatus('Hidden')"
+    >
+      Hidden
+    </button>
+    <button class="btn btn-outline-danger btn-sm m-2" (click)="deleteAccount()">
+      Delete
+    </button>
+  </div>
+</div>
