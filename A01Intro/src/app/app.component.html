@@ -8,4 +8,53 @@
 <!-- <app-secret></app-secret> -->
 
 <!-- <app-lifecycle-demo></app-lifecycle-demo> -->
-<app-accounts></app-accounts>
+<!-- <app-accounts></app-accounts> -->
+<nav class="navbar navbar-expand-sm bg-info navbar-dark mb-10">
+  <div class="container">
+    <a href="#" class="navbar-brand">Angular App</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav">
+        <li
+          class="nav-item"
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a routerLink="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Server" class="nav-link">Server</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Secret" class="nav-link">Secrets</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Product" class="nav-link">Product</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Success" class="nav-link">Success</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Warning" class="nav-link">Warning</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Names" class="nav-link">Names</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Account" class="nav-link">Accounts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
