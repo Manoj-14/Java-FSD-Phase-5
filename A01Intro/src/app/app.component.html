@@ -30,7 +30,12 @@
         >
           <a routerLink="/" class="nav-link">Home</a>
         </li>
-        <li class="nav-item">
+        <li
+          class="nav-item"
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           <a routerLink="/Server" class="nav-link">Server</a>
         </li>
         <li class="nav-item">
