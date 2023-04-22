@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pipes-demo.component.css'],
 })
 export class PipesDemoComponent {
+  filterStatus = '';
   servers: {
     ServerSize: string;
     name: string;

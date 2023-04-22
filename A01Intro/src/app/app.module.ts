@@ -24,6 +24,7 @@ import { TemplateFormsComponent } from './template-forms/template-forms.componen
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { ShortenPipe } from './custom-pipes/shorten.pipe';
+import { FilterPipe } from './custom-pipes/filter.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     ReactiveFormsComponent,
     PipesDemoComponent,
     ShortenPipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

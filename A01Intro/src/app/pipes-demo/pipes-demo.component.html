@@ -1,8 +1,16 @@
-<div class="comtainer d-flex justify-content-center">
+<div class="container m-5 d-flex flex-column justify-content-center">
+  <div class="form-inline">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search"
+      [(ngModel)]="filterStatus"
+    />
+  </div>
   <ul class="list-group m-2">
     <li
       class="list-group-item m-2"
-      *ngFor="let server of servers"
+      *ngFor="let server of servers | filter : filterStatus : 'status'"
       [ngClass]="getStatusClass(server)"
     >
       <strong>{{ server.name | shorten : 0 : 5 }} </strong>|
