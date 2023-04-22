@@ -6,7 +6,7 @@ import { ProductsComponent } from './products/products.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { ServerComponent } from './server/server.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NamesComponent } from './names/names.component';
 import { SecretComponent } from './secret/secret.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
@@ -21,6 +21,7 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'Account', component: AccountsComponent },
   { path: 'Observable', component: ObservableDemoComponent },
   { path: 'TemplateForm', component: TemplateFormsComponent },
+  { path: 'ReactiveForm', component: ReactiveFormsComponent },
 ];
 
 @NgModule({
@@ -55,8 +57,14 @@ const appRoutes: Routes = [
     HomeComponent,
     ObservableDemoComponent,
     TemplateFormsComponent,
+    ReactiveFormsComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)], // Import FormModeule for two way binding
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
+  ], // Import FormModeule for two way binding
   providers: [],
   bootstrap: [AppComponent],
 })
