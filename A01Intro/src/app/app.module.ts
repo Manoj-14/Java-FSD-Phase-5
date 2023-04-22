@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'Observable', component: ObservableDemoComponent },
   { path: 'TemplateForm', component: TemplateFormsComponent },
   { path: 'ReactiveForm', component: ReactiveFormsComponent },
+  { path: 'Pipes', component: PipesDemoComponent },
 ];
 
 @NgModule({
@@ -58,6 +60,7 @@ const appRoutes: Routes = [
     ObservableDemoComponent,
     TemplateFormsComponent,
     ReactiveFormsComponent,
+    PipesDemoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<div class="comtainer d-flex justify-content-center">
+  <ul class="list-group m-2">
+    <li
+      class="list-group-item m-2"
+      *ngFor="let server of servers"
+      [ngClass]="getStatusClass(server)"
+    >
+      <strong>{{ server.name }} </strong>| {{ server.ServerSize | uppercase }} |
+      {{ server.started | date }}
+      <span class="badge bg-warning">{{ server.status | titlecase }}</span>
+    </li>
+  </ul>
+</div>
