@@ -20,6 +20,7 @@ import { AccountComponent } from './accounts/account/account.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
+import { TemplateFormsComponent } from './template-forms/template-forms.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
   { path: 'Names', component: NamesComponent },
   { path: 'Account', component: AccountsComponent },
   { path: 'Observable', component: ObservableDemoComponent },
+  { path: 'TemplateForm', component: TemplateFormsComponent },
 ];
 
 @NgModule({
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
     AccountComponent,
     HomeComponent,
     ObservableDemoComponent,
+    TemplateFormsComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)], // Import FormModeule for two way binding
   providers: [],
