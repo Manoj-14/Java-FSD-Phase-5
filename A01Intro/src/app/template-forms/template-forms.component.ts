@@ -7,9 +7,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template-forms.component.css'],
 })
 export class TemplateFormsComponent {
-  genders: string[] = ['Male', 'Female'];
+  submited: boolean = false;
+
+  user: {
+    username: string;
+    email: string;
+    secret: string;
+    gender: string;
+  };
+
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    this.user = {
+      username: form.value.username,
+      email: form.value.email,
+      secret: form.value.secret,
+      gender: form.value.gender,
+    };
+    this.submited = true;
+    form.reset();
   }
 }
