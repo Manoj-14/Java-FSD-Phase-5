@@ -26,15 +26,15 @@ export class PipesDemoComponent {
     },
     {
       ServerSize: 'small',
-      name: 'Development Server',
-      status: 'offline',
-      started: new Date('2019-01-20'),
+      name: 'QA Server e',
+      status: 'Critical',
+      started: new Date('2022-12-20'),
     },
     {
       ServerSize: 'small',
-      name: 'QA Server',
-      status: 'Critical',
-      started: new Date('2022-12-20'),
+      name: 'Development Server',
+      status: 'offline',
+      started: new Date('2019-01-20'),
     },
   ];
 
