@@ -23,7 +23,7 @@ import { ObservableDemoComponent } from './observable-demo/observable-demo.compo
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
-import { ShortenPipe } from './accounts/custom-pipes/shorten.pipe';
+import { ShortenPipe } from './custom-pipes/shorten.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
