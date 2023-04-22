@@ -14,7 +14,7 @@
       [ngClass]="getStatusClass(server)"
     >
       <strong>{{ server.name | shorten : 0 : 5 }} </strong>|
-      {{ server.ServerSize | uppercase }} |
+      {{ server.ServerSize | uppercase | reverse }} |
       {{ server.started | date : "fullDate" | uppercase }}
       <span class="badge bg-warning">{{ server.status | titlecase }}</span>
     </li>

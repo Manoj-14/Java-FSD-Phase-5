@@ -25,6 +25,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { ShortenPipe } from './custom-pipes/shorten.pipe';
 import { FilterPipe } from './custom-pipes/filter.pipe';
+import { ReversePipe } from './custom-pipes/reverse.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     PipesDemoComponent,
     ShortenPipe,
     FilterPipe,
+    ReversePipe,
   ],
   imports: [
     BrowserModule,
