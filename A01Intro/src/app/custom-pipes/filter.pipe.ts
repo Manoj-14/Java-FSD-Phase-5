@@ -10,7 +10,8 @@ export class FilterPipe implements PipeTransform {
     }
     const result = [];
     for (let item of value) {
-      if (item[propName] === filterString) {
+      // if (item[propName] ===  filterString ) {
+      if (item[propName].includes(filterString)) {
         result.push(item);
       }
     }
