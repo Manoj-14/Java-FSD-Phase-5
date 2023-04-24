@@ -1,0 +1,43 @@
+<div class="container w-50 mt-5">
+  <form #f="ngForm">
+    <div class="form">
+      <div class="form-group">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          placeholder="Enter username"
+          name="title"
+          class="form-control"
+          id="title"
+          ngModel
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea
+          type="text"
+          placeholder="Enter username"
+          name="content"
+          class="form-control"
+          id="content"
+          cols="45"
+          rows="8"
+          ngModel
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <input
+          type="submit"
+          placeholder="Enter Content"
+          name="username"
+          [disabled]="!f.valid"
+          class="form-control btn btn-primary"
+          id="title"
+          (click)="onCreatePost(f.value, f)"
+        />
+      </div>
+    </div>
+  </form>
+</div>
