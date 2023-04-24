@@ -1,0 +1,7 @@
+<div class="container w-75 mt-5">
+  <div class="alert alert-info text-center" *ngIf="fetching">Loading....</div>
+  <h2 class="text-center m-2">Posts</h2>
+  <div *ngIf="!fetching">
+    <app-post *ngFor="let myPost of dbPosts" [post]="myPost"></app-post>
+  </div>
+</div>
