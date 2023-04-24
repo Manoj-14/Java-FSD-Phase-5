@@ -2,14 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { PostData } from './view-posts.interface';
+import { BlogPostService } from '../services/blog-post.service';
 
 @Component({
   selector: 'app-view-posts',
   templateUrl: './view-posts.component.html',
   styleUrls: ['./view-posts.component.css'],
+  providers: [BlogPostService],
 })
 export class ViewPostsComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private blogPostService: BlogPostService
+  ) {}
 
   dbPosts: PostData[] = [];
   fetching: boolean = true;
@@ -17,26 +22,13 @@ export class ViewPostsComponent implements OnInit {
     this.fetchposts();
   }
 
-  fetchposts = () => {
-    this.httpClient
-      .get(
-        'https://blogproject-48cc7-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json'
-      )
-      .pipe(
-        map((responseData) => {
-          const postArray: any = [];
-          for (const key in responseData) {
-            postArray.push({
-              id: key,
-              ...responseData[key],
-            });
-          }
-          return postArray;
-        })
-      )
-      .subscribe((posts) => {
-        this.dbPosts = posts;
-        this.fetching = false;
-      });
-  };
+  fetchposts() {
+    this.blogPostService.fetchposts().subscribe((posts) => {
+      this.dbPosts = posts;
+      this.fetching = false;
+    });
+  }
+  onPostDelete() {
+    this.fetchposts();
+  }
 }

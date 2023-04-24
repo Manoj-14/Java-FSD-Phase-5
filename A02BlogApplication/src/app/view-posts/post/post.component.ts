@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PostData } from '../view-posts.interface';
 import { HttpClient } from '@angular/common/http';
+import { BlogPostService } from 'src/app/services/blog-post.service';
 
 @Component({
   selector: 'app-post',
@@ -8,18 +9,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./post.component.css'],
 })
 export class PostComponent {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private blogPostService: BlogPostService) {}
 
   @Input()
   post: PostData;
 
+  @Output()
+  postDeleted = new EventEmitter<{ deleted: boolean }>();
+
   onDeletePost() {
-    this.httpClient
-      .delete(
-        `https://blogproject-48cc7-default-rtdb.asia-southeast1.firebasedatabase.app/posts/${this.post.id}.json`
-      )
-      .subscribe((res) => {
-        console.log('Post deleted');
-      });
+    this.blogPostService.deletePost(this.post.id).subscribe(() => {
+      this.postDeleted.emit({ deleted: true });
+    });
   }
 }
