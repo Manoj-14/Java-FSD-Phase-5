@@ -9,11 +9,12 @@ import { map } from 'rxjs/operators';
 })
 export class BlogPostService {
   constructor(private httpClient: HttpClient) {}
+
+  private url =
+    'https://blogproject-48cc7-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
+
   createPost(postsData: PostData) {
-    return this.httpClient.post(
-      'https://blogproject-48cc7-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json',
-      postsData
-    );
+    return this.httpClient.post(this.url, postsData);
   }
 
   deletePost(id) {
@@ -23,21 +24,17 @@ export class BlogPostService {
   }
 
   fetchposts() {
-    return this.httpClient
-      .get(
-        'https://blogproject-48cc7-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json'
-      )
-      .pipe(
-        map((responseData) => {
-          const postArray: any = [];
-          for (const key in responseData) {
-            postArray.push({
-              id: key,
-              ...responseData[key],
-            });
-          }
-          return postArray;
-        })
-      );
+    return this.httpClient.get(this.url).pipe(
+      map((responseData) => {
+        const postArray: any = [];
+        for (const key in responseData) {
+          postArray.push({
+            id: key,
+            ...responseData[key],
+          });
+        }
+        return postArray;
+      })
+    );
   }
 }

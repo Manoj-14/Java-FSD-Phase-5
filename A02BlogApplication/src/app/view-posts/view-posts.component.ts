@@ -18,15 +18,23 @@ export class ViewPostsComponent implements OnInit {
 
   dbPosts: PostData[] = [];
   fetching: boolean = true;
+  errorMessage = null;
+
   ngOnInit(): void {
     this.fetchposts();
   }
 
   fetchposts() {
-    this.blogPostService.fetchposts().subscribe((posts) => {
-      this.dbPosts = posts;
-      this.fetching = false;
-    });
+    this.blogPostService.fetchposts().subscribe(
+      (posts) => {
+        this.dbPosts = posts;
+        this.fetching = false;
+      },
+      (err) => {
+        this.fetching = false;
+        this.errorMessage = err.error.error;
+      }
+    );
   }
   onPostDelete() {
     this.fetchposts();

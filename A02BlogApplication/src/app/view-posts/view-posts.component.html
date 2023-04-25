@@ -1,7 +1,13 @@
 <div class="container w-75 mt-5">
   <h2 class="text-center m-2">Posts</h2>
   <div class="alert alert-info text-center" *ngIf="fetching">Loading....</div>
-  <div *ngIf="!fetching">
+  <div class="alert alert-danger text-center" *ngIf="errorMessage != null">
+    Error occured <strong> {{ errorMessage }} </strong>
+  </div>
+  <div *ngIf="!fetching && errorMessage == null">
+    <div class="alert alert-info text-center" *ngIf="dbPosts.length <= 0">
+      No Post Available
+    </div>
     <app-post
       (postDeleted)="onPostDelete()"
       *ngFor="let myPost of dbPosts"
